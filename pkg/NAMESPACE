@@ -1,0 +1,11 @@
+import(xtable)
+export(classify, nlcv, scoresPlot, mcrPlot, topFeatures, confusionMatrix, 
+       simulateData, rankDistributionPlot, limmaTwoGroups, pamrTrain, pamrML, pamrI,
+       rocPlot, nldaI)
+S3method(summary, mcrPlot)
+S3method(print, summary.mcrPlot)
+S3method(xtable, summary.mcrPlot)
+S3method(print, confusionMatrix)
+S3method(xtable, confusionMatrix)
+S3method(print, pamrML)
+S3method(predict, pamrML)
