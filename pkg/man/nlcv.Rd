@@ -6,7 +6,8 @@
   applies five different classification algorithms. % TODO add more content, Willem
 }
 \usage{
-nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, nFeatures = c(2, 3, 5, 7, 10, 15, 20, 25, 30, 35), fsMethod = c("randomForest", "t.test", "limma", "none"), 
+nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, classdist = c("balanced", "unbalanced"), 
+  nFeatures = c(2, 3, 5, 7, 10, 15, 20, 25, 30, 35), fsMethod = c("randomForest", "t.test", "limma", "none"), 
   classifMethods = c("dlda", "randomForest", "bagg", "pam", "svm"), fsPar = NULL, initialGenes = seq(length.out = nrow(eset)), 
   storeTestScores = FALSE, verbose = FALSE)
 }
@@ -17,6 +18,9 @@ nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, nFeatures = c(2, 3,
   \item{nRuns}{Number of runs for the outer loop of the cross-validation}
   \item{propTraining}{Proportion of the observations to be assigned to the
     training set. By default \code{propTraining = 2/3}.}
+  \item{classdist}{distribution of classes; allows to indicate whether 
+    your distribution 'balanced' or 'unbalanced'. The sampling strategy
+    for each run is adapted accordingly.}
   \item{nFeatures}{Numeric vector with the number of features to be selected
     from the features kept by the feature selection method. For each number n
     specified in this vector the classification algorithms will be run using 
