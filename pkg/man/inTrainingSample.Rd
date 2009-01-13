@@ -9,17 +9,28 @@
   not (\code{FALSE}).
 }
 \usage{
-inTrainingSample(y, propTraining = 2/3)
+inTrainingSample(y, propTraining = 2/3, classdist = c("balanced", "unbalanced"))
 }
 \arguments{
   \item{y}{factor with the class labels for the total data set}
   \item{propTraining}{proportion of the data that should be in a 
     training set; the default value is 2/3.}
+  \item{classdist}{distribution of classes; allows to indicate whether 
+    your distribution 'balanced' or 'unbalanced'. The sampling strategy
+    for each run is adapted accordingly.}
 }
 \value{
   logical vector indicating for each observation in \code{y} whether
   the observation is in the learning sample (\code{TRUE}) or 
   not (\code{FALSE})
-} % TODO add examples
+} 
+\examples{
+  ### this example demonstrates the logic of sampling in case of unbalanced distribution of classes
+  y <- factor(c(rep("A", 21), rep("B", 80)))
+  
+  inTrainingSample(y, 2/3, "unbalanced") 
+  table(y[inTrainingSample(y, 2/3, "unbalanced")])  # should be 14, 14 (for A, B resp.)
+  table(y[!inTrainingSample(y, 2/3, "unbalanced")]) # should be 7, 66  (for A, B resp.) 
+}
 \author{W. Talloen and T. Verbeke}
 \keyword{manip} % TODO change keyword
