@@ -28,9 +28,9 @@ inTrainingSample(y, propTraining = 2/3, classdist = c("balanced", "unbalanced"))
   ### this example demonstrates the logic of sampling in case of unbalanced distribution of classes
   y <- factor(c(rep("A", 21), rep("B", 80)))
   
-  inTrainingSample(y, 2/3, "unbalanced") 
-  table(y[inTrainingSample(y, 2/3, "unbalanced")])  # should be 14, 14 (for A, B resp.)
-  table(y[!inTrainingSample(y, 2/3, "unbalanced")]) # should be 7, 66  (for A, B resp.) 
+  nlcv:::inTrainingSample(y, 2/3, "unbalanced") 
+  table(y[nlcv:::inTrainingSample(y, 2/3, "unbalanced")])  # should be 14, 14 (for A, B resp.)
+  table(y[!nlcv:::inTrainingSample(y, 2/3, "unbalanced")]) # should be 7, 66  (for A, B resp.) 
 }
 \author{W. Talloen and T. Verbeke}
 \keyword{manip} % TODO change keyword
