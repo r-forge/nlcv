@@ -1,3 +1,6 @@
+0.1-84
+    o added sampling strategy for unbalanced class distributions; argument 'distclass' of
+      functions inTrainingSample and nlcv 
 0.1-83
 	o fix too protective check in nlcv (randomForest feature selection)
 0.1-82
