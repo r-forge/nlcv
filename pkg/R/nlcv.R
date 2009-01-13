@@ -1,7 +1,8 @@
 nlcv <- function(eset,
     classVar = "type",
     nRuns = 2,          # total number of runs i.e. number of splits in training and test set
-    propTraining = 2/3, # proportion of data in a training set                     
+    propTraining = 2/3, # proportion of data in a training set
+    classdist = c("balanced", "unbalanced"), 
     nFeatures = c(2, 3, 5, 7, 10, 15, 20, 25, 30, 35), #, 40),
     fsMethod = c("randomForest", "t.test", "limma", "none"),
     classifMethods = c("dlda", "randomForest", "bagg", "pam", "svm"),
@@ -29,6 +30,8 @@ nlcv <- function(eset,
   if (!is.factor(pData(eset)[,classVar]))
     stop("'classVar' should be a factor variable")
   
+  classdist <- match.arg(classdist)
+  
   # sort nFeatures (assumption of mcrPlot)
   nFeatures <- sort(nFeatures)
   
@@ -47,7 +50,7 @@ nlcv <- function(eset,
   
   for (irun in 1:nRuns) {
     indicesTrainingSample[irun, ] <- inTrainingSample(pData(eset)[, classVar],
-        propTraining = propTraining)
+        propTraining = propTraining, classdist = classdist)
     trainingSampleAllRuns[irun, ] <- which(indicesTrainingSample[irun, ])
     testSampleAllRuns[irun, ]   <- which(!indicesTrainingSample[irun, ])
   }
