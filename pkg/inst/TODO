@@ -5,8 +5,6 @@ TODO list for the nlcv package
 
 - progress bar
 - pamr message weghalen
-- equal class distribution in training set
-(full: 20A 6B --> training 4A 4B)
 
 topCombinations(n = )
 - hoeveel komen A en B samen voor in de top n over

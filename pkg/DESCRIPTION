@@ -2,7 +2,7 @@ Package: nlcv
 Type: Package
 Title: Nested Loop Cross Validation
 Version: 0.1-84
-Date: 2009-01-13
+Date: 2009-01-15
 Author: Willem Talloen, Tobias Verbeke                                                                                                             
 Maintainer: Tobias Verbeke <tobias.verbeke@gmail.com>
 Description: Nested loop cross validation for classification purposes    

@@ -36,12 +36,33 @@ nlcv <- function(eset,
   nFeatures <- sort(nFeatures)
   
   # sample sizes (total, training, test)
-  nTotalSample <- length(pData(eset)[, classVar])  # total sample size (classVar: response variable 
-  # [observed classes])
-  nTrainingSample <- round(propTraining * nTotalSample) # sample size of training (=learning) set 
-  nTestSample <- nTotalSample - nTrainingSample  #   "            validation (=test) set
   
-  # initialize matrices (total, training, test)
+  ## initialize matrices (total, training, test)
+  ## depends on classdist argument
+  
+  respVar <- pData(eset)[, classVar]
+  nTotalSample <- length(respVar)  # total sample size
+  
+  if (classdist == "balanced"){
+     
+    nTrainingSample <- round(propTraining * nTotalSample) # sample size of training (=learning) set 
+    nTestSample <- nTotalSample - nTrainingSample  #   "            validation (=test) set
+     
+  } else {
+    
+    smallestClass <- names(sort(table(respVar)))[1]
+    nSmallest <- sum(respVar == smallestClass)
+    
+    nSmallestTrain <- round(propTraining * nSmallest)
+    nBiggestTrain <- nSmallestTrain
+    nSmallestTest <- nSmallest - nSmallestTrain
+    nBiggestTest <- nTotalSample - (nSmallestTest + nSmallestTrain + nBiggestTrain)
+    
+    nTrainingSample <- nSmallestTrain + nBiggestTrain
+    nTestSample <- nSmallestTest + nBiggestTest
+  
+  }
+  
   totalSampleAllRuns <- matrix(0, nrow = nRuns, ncol = nTotalSample)
   trainingSampleAllRuns <- matrix(0, nrow = nRuns, ncol = nTrainingSample)
   testSampleAllRuns   <- matrix(0, nrow = nRuns, ncol = nTestSample)
