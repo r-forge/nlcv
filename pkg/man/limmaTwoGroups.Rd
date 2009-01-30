@@ -1,5 +1,5 @@
 \name{limmaTwoGroups}
-\alias{limmaTwoGroups}
+\alias{limmaTwoGroups,limma2Groups}
 \title{Wrapper around limma for the comparison of two groups}
 \description{
   Wrapper around limma for the comparison of two groups

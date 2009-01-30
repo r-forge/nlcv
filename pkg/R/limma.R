@@ -17,4 +17,6 @@ limmaTwoGroups <- function(object, group){
   return(sortedResults)
 }
 
+limma2Groups <- limmaTwoGroups
+
 
