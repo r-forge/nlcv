@@ -2,15 +2,19 @@
 # o confusionMatrix
 # o print.confusionMatrix
 
-confusionMatrix <- function(nlcvObj, tech, proportions = TRUE){
-  mcrObj <- mcrPlot(nlcvObj, plot = FALSE)
+confusionMatrix <- function(x, ...){
+  UseMethod("confusionMatrix")
+}
+
+confusionMatrix.nlcv <- function(x, tech, proportions = TRUE){
+  mcrObj <- mcrPlot(x, plot = FALSE)
   mcrSummary <- summary(mcrObj)
   # number of features: always optimal number of features
   nFeaturesOptim <- mcrSummary[tech, "nFeat_optim"]
   
-  scoresObj <- scoresPlot(nlcvObj, tech = tech, nfeat = nFeaturesOptim,
+  scoresObj <- scoresPlot(x, tech = tech, nfeat = nFeaturesOptim,
       plot = FALSE)
-  observedClasses <- attr(nlcvObj, "classVar")                      
+  observedClasses <- attr(x, "classVar")                      
   levelsObserved <- levels(observedClasses)
   oppObservedClasses <- factor(levelsObserved[(as.numeric(observedClasses) %% 2)+1],
       levels = levelsObserved)
@@ -21,11 +25,11 @@ confusionMatrix <- function(nlcvObj, tech, proportions = TRUE){
   # res <- addmargins(res)
   attr(res, "tech") <- tech
   attr(res, "nFeaturesOptim") <- nFeaturesOptim
-  class(res) <- c("confusionMatrix", class(res)) # extends ftable
+  class(res) <- c("nlcvConfusionMatrix", "confusionMatrix", class(res)) # extends ftable
   return(res)                      
 }
 
-print.confusionMatrix <- function(x, ...){
+print.nlcvConfusionMatrix <- function(x, ...){
   
   tech <- attr(x, "tech")
   nFeaturesOptim <- attr(x, "nFeaturesOptim")

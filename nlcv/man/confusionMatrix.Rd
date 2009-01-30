@@ -1,6 +1,7 @@
 \name{confusionMatrix}
 \alias{confusionMatrix}
-\alias{print.confusionMatrix}
+\alias{print.nlcvConfusionMatrix}
+\alias{confusionMatrix.nlcv}
 \title{compute a confusion matrix for the optimal number of features
        for a given technique used in the nested loop cross validation}
 \description{
@@ -11,19 +12,20 @@
    all runs of the nested loop.
 }
 \usage{
-confusionMatrix(nlcvObj, tech, proportions = TRUE)
-\method{print}{confusionMatrix}(x, ...)
+confusionMatrix(x, ...)
+\method{confusionMatrix}{nlcv}(x, tech, proportions = TRUE)
+\method{print}{nlcvConfusionMatrix}(x, ...)
 }
 \arguments{
-  \item{nlcvObj}{object as produced by the \code{nlcv} function}
+  \item{x}{object for which a confusionMatrix should be produced, e.g.
+    one produced by the \code{nlcv} function; for the print method, it
+    is the object to be printed}
   \item{tech}{string indicating the classification technique for which
     the confusion matrix should be returned}
   \item{proportions}{logical indicating whether the cells of the matrix
     should contain proportions (\code{TRUE}) or raw counts (\code{FALSE})}
-  \item{x}{Object of class 'confusionMatrix' as produced by the function of the 
-            same name}
   \item{\dots}{Dots argument to pass additional parameters to the
-               \code{print} method}
+               \code{confusionMatrix} or \code{print} methods}
 }
 \value{
   \code{confusionMatrix} produces an object of class \code{confusionMatrix}
