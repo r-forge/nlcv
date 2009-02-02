@@ -1,3 +1,5 @@
+0.1-86
+    o small fix for topTable in limma2Groups (which is introduced as alias for limmaTwoGroups)
 0.1-85
     o turned confusionMatrix into a generic function
 0.1-84
