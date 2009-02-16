@@ -8,6 +8,7 @@ nlcv <- function(eset,
     classifMethods = c("dlda", "randomForest", "bagg", "pam", "svm"),
     fsPar = NULL,
     initialGenes = seq(length.out = nrow(eset)),
+    geneID = "ID",
     storeTestScores = FALSE,
     verbose = FALSE){
   
@@ -164,10 +165,11 @@ nlcv <- function(eset,
         
         limma = {
           limmaTopTable <- limmaTwoGroups(eset[, trainingSampleRun],
-                                      group = classVar) 
-          orderedEset <- eset[limmaTopTable$ID, ] # features sorted by increasing P-values
+                                      group = classVar)
+          limmaTopTableGeneIDs <- limmaTopTable[geneID]                                   
+          orderedEset <- eset[limmaTopTableGeneIDs, ] # features sorted by increasing P-values
           featLimma <- limmaTopTable$P.Value
-          names(featLimma) <- limmaTopTable$ID
+          names(featLimma) <- limmaTopTableGeneIDs
           feat.outp[[irun]] <- featLimma
       }) # end of switch
     

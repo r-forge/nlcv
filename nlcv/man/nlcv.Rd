@@ -9,6 +9,7 @@
 nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, classdist = c("balanced", "unbalanced"), 
   nFeatures = c(2, 3, 5, 7, 10, 15, 20, 25, 30, 35), fsMethod = c("randomForest", "t.test", "limma", "none"), 
   classifMethods = c("dlda", "randomForest", "bagg", "pam", "svm"), fsPar = NULL, initialGenes = seq(length.out = nrow(eset)), 
+  geneID = "ID",
   storeTestScores = FALSE, verbose = FALSE)
 }
 \arguments{
@@ -34,6 +35,9 @@ nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, classdist = c("bala
     currently the default for \code{"randomForest"} is an empty \code{list()} 
     whereas for \code{"t.test"}, one can specify the particular test to be
     used (the default being \code{list(test = "f"}).}
+  \item{geneID}{string representing the name of the gene ID variable in the
+    fData of the expression set to use; this argument was added for people who
+    use e.g. both Entrez IDs and Ensemble gene IDs}
   \item{initialGenes}{Initial subset of genes in the ExpressionSet on which
     to apply the nested loop cross validation procedure. By default all genes
     are selected.}
