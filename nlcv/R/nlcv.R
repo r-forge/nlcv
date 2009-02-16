@@ -135,20 +135,30 @@ nlcv <- function(eset,
            ntree <- if (is.null(fsPar$ntree)) 500
               else fsPar$ntree
           
-          rf <- MLearn(formula = as.formula(paste(classVar, "~ .", sep = " ")),
-              data = eset[initialGenes, ], 
-              trainInd = as.integer(trainingSampleRun),
-              .method = randomForestI,
-              importance = TRUE,
-              ntree = ntree,
-              mtry = mtry)
-
+          
+          rf <- randomForest::randomForest(x = t(exprs(eset[initialGenes, ])),
+              y = pData(eset)[,classVar], 
+              mtry= mtry,
+              importance=TRUE)
+          
+          importanceRf <- randomForest::importance(rf)
+        
+          # TV: MLearn method blows up memory for some reason :-(
+      
+#          rf <- MLearn(formula = as.formula(paste(classVar, "~ .", sep = " ")),
+#              data = eset[initialGenes, ], 
+#              trainInd = as.integer(trainingSampleRun),
+#              .method = randomForestI,
+#              importance = TRUE,
+#              ntree = ntree,
+#              mtry = mtry)
+          
           # order features from highest to lowest variable importance
-          orderedGenesRF <- order(rf@RObject$importance[, 3], decreasing = TRUE)
+          orderedGenesRF <- order(importanceRf[, 3], decreasing = TRUE)
           orderedEset <- eset[orderedGenesRF, ]
-          featRF <- rf@RObject$importance[orderedGenesRF, 3]
+          featRF <- importanceRf[orderedGenesRF, 3]
           feat.outp[[irun]] <- featRF},
-
+        
         t.test = {
           
           fsPar$test <- if (is.null(fsPar$test)) "f" else fsPar$test

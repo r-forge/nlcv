@@ -1,3 +1,6 @@
+0.1-88
+    o replace MLearn interface for randomForest feature selection by
+      plain use of the randomForest function 
 0.1-87
     o add geneID argument to nlcv to allow for different gene ID names
       in the fData of the expression set
