@@ -13,7 +13,7 @@
 }
 \usage{
 confusionMatrix(x, ...)
-\method{confusionMatrix}{nlcv}(x, tech, proportions = TRUE)
+\method{confusionMatrix}{nlcv}(x, tech, proportions = TRUE, ...)
 \method{print}{nlcvConfusionMatrix}(x, ...)
 }
 \arguments{

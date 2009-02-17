@@ -136,12 +136,12 @@ nlcv <- function(eset,
               else fsPar$ntree
           
           
-          rf <- randomForest::randomForest(x = t(exprs(eset[initialGenes, ])),
+          rf <- randomForest(x = t(exprs(eset[initialGenes, ])),
               y = pData(eset)[,classVar], 
               mtry= mtry,
               importance=TRUE)
           
-          importanceRf <- randomForest::importance(rf)
+          importanceRf <- importance(rf)
         
           # TV: MLearn method blows up memory for some reason :-(
       
