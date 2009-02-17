@@ -1,3 +1,5 @@
+0.1-89
+	o confusionMatrix name space fixs
 0.1-88
     o replace MLearn interface for randomForest feature selection by
       plain use of the randomForest function 
