@@ -1,7 +1,3 @@
-# contains:
-# o confusionMatrix
-# o print.confusionMatrix
-
 confusionMatrix <- function(x, ...){
   UseMethod("confusionMatrix")
 }
