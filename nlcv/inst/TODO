@@ -4,7 +4,7 @@ TODO list for the nlcv package
 - write gbm interface
 
 - progress bar
-- pamr message weghalen
+- silence pamr messages
 
 topCombinations(n = )
 - hoeveel komen A en B samen voor in de top n over
