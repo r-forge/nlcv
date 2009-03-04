@@ -24,7 +24,7 @@ rocPlot <- function(nlcvObj,   # output object from nlcv
   meanProbs <- apply(testScoresMat, 2, mean, na.rm = TRUE)
   nans <- is.na(meanProbs)
   meanProbs <- meanProbs[!nans]
-  trueClasses <- nlcvObj$trueClasses[!nans] # attr(nlcvObj, "classVar")[!nans]
+  trueClasses <- attr(nlcvObj, "classVar")[!nans] # nlcvObj$trueClasses[!nans] # 
   predObj <- prediction(predictions = meanProbs, labels = trueClasses)
   
   globalAUC <- unlist(performance(predObj, "auc")@y.values)

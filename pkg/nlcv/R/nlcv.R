@@ -233,7 +233,7 @@ nlcv <- function(eset,
     } 
   }
   
-  res <- list(output = output, features = feat.outp, trueClasses = pData(eset)[[classVar]])
+  res <- list(output = output, features = feat.outp) #, trueClasses = pData(eset)[[classVar]])
   attr(res, "nFeatures") <- nFeatures
   tmpClassVar <- pData(eset)[, classVar]
   names(tmpClassVar) <- sampleNames(eset)

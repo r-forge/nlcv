@@ -25,7 +25,7 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
   
   ### plot results for a given number of features
   nfeatName <- paste("nfeat", nfeat, sep = "")
-  classVar <- nlcvObj$trueClasses # attr(nlcvObj, "classVar")
+  classVar <- attr(nlcvObj, "classVar")
   classVarLevels <- levels(classVar)
   
   plotData <- resoutProp[[nfeatName]] # vector of proportions
