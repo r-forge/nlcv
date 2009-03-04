@@ -1,6 +1,7 @@
 0.1-91
     o rename topFeatures into topTable and turn the topFeatures function
       into a method (for 'nlcv' objects)
+    o make use of samples names as x-axis labels of scoresPlot
 0.1-90
 	o document nldaI
 0.1-89
