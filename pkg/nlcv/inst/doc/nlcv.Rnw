@@ -265,7 +265,7 @@ Finally, the top 10 most frequently selected genes by RF variable importance \re
 shows that no gene is frequently selected. Only gene 410 is half of the time selected.
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvRF_R, n = 10)
+outtable <- topTable(nlcvRF_R, n = 10)
 xtable(outtable, label = "tab:selGenes_R",
 		caption="Top 10 features across all runs of the nested loop cross-validation.")
 @
@@ -337,7 +337,7 @@ Finally, the top 12 most frequently selected genes by RF variable importance (Ta
 shows that the genes with a signal were always selected. The same thing applies for t-test selection.
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvRF_SS, n = 12)
+outtable <- topTable(nlcvRF_SS, n = 12)
 xtable(outtable, label = "tab:selGenes_SS",
 		caption="Top 20 features across all runs of the nested loop cross-validation.")
 @
@@ -415,13 +415,13 @@ shows that the 5 simulated genes are in the top 6. RF variable importance (Table
 is is selecting less accurately as expected because the signal was simulated gene-by-gene.
 
 <<selGenesNlcvTT_WS, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvTT_WS, n = 7)
+outtable <- topTable(nlcvTT_WS, n = 7)
 xtable(outtable, label = "tab:selGenes_WS1",
 		caption="Top 20 features selected with t-test across all runs of the nested loop cross-validation.")
 @
 
 <<selGenesNlcvRF_WS, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvRF_WS, n = 7)
+outtable <- topTable(nlcvRF_WS, n = 7)
 xtable(outtable, label = "tab:selGenes_WS2",
 		caption="Top 20 features selected with RF variable importance across all runs of the nested loop cross-validation.")
 @
@@ -527,13 +527,13 @@ shows that the 5 simulated genes are in the top 6. RF variable importance (Table
 is is selecting less accurately as expected because the signal was simulated gene-by-gene.
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvTT_SHS, n = 7)
+outtable <- topTable(nlcvTT_SHS, n = 7)
 xtable(outtable, label = "tab:selGenes_SHS1",
 		caption="Top 20 features selected with t-test across all runs of the nested loop cross-validation.")
 @
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvRF_SHS, n = 7)
+outtable <- topTable(nlcvRF_SHS, n = 7)
 xtable(outtable, label = "tab:selGenes_SHS2",
 		caption="Top 20 features selected with RF variable importance across all runs of the nested loop cross-validation.")
 @
@@ -662,13 +662,13 @@ The most frequently selected genes by t-test selection contain only 2 of the 5 g
 This might be explained because we used here a parametric t-test which is more sensitive for outliers.
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvTT_WHS, n = 10)
+outtable <- topTable(nlcvTT_WHS, n = 10)
 xtable(outtable, label = "tab:selGenes_WHS1",
 		caption="Top 20 features selected with t-test across all runs of the nested loop cross-validation.")
 @
 
 <<selGenes, fig = FALSE, echo = FALSE, results=tex>>=
-outtable <- topFeatures(nlcvRF_WHS, n = 10)
+outtable <- topTable(nlcvRF_WHS, n = 10)
 xtable(outtable, label = "tab:selGenes_WHS2",
 		caption="Top 20 features selected with RF variable importance across all runs of the nested loop cross-validation.")
 @

@@ -1,9 +1,7 @@
-# xtable method for confusionMatrix objects, as produced by 
-# the confusionMatrix function
-
-# object: object of class 'confusionMatrix'
-# '...' additional arguments for xtable, such as caption etc.
-
+#' xtable method for confusionMatrix objects, as produced by confusionMatrix methods
+#' @param object object of class 'confusionMatrix'
+#' @param '...' additional arguments for xtable, such as caption etc.
+#' @S3method xtable confusionMatrix
 xtable.confusionMatrix <- function(x, caption = NULL, label = NULL, align = NULL, 
     digits = NULL, display = NULL, ...){
   tech <- attr(x, "tech")
@@ -17,4 +15,3 @@ xtable.confusionMatrix <- function(x, caption = NULL, label = NULL, align = NULL
   xtable:::xtable.matrix(mat, caption = caption, label = label, align = align,
       digits = digits, display = display, ...)
 }
-
