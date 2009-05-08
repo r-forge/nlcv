@@ -34,7 +34,7 @@ nlcv
   and returned.
 }
 \value{
-  a data frame of one column (\texttt{percentage})
+  a data frame of one column (\code{percentage})
   with percentages reflecting the frequency of selection 
   of a feature in the top n across all runs; 
   the features are sorted on decreasing frequency.

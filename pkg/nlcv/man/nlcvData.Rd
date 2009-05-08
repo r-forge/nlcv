@@ -20,7 +20,7 @@
 \usage{data(nlcvRF_R)}
 \format{
   The given data sets are delivered in the form of objects of
-  class \texttt{nlcv} as produced by the \texttt{nlcv} function
+  class \code{nlcv} as produced by the \code{nlcv} function
 }
 \details{
   The objects were created using the code given in the examples 
