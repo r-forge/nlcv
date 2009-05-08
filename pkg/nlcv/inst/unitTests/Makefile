@@ -1,6 +1,6 @@
 PKG=nlcv
 TOP=../..
-SUITE=doRUnit.R
+SUITE=runTests.R
 R=R
 
 all: inst test

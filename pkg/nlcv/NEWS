@@ -1,7 +1,13 @@
+0.1-92
+    o add randomForest explicitly to dependencies
+    o fix bug in nlcv with limma feature selection, where incidentally 
+      the geneID column could be a factor and therefore cause erroneous
+      extraction from an ExpressionSet
+       
 0.1-91
     o rename topFeatures into topTable and turn the topFeatures function
       into a method (for 'nlcv' objects)
-    o make use of samples names as x-axis labels of scoresPlot
+    o make use of salmples names as x-axis labels of scoresPlot
 0.1-90
 	o document nldaI
 0.1-89

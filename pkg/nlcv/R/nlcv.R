@@ -176,7 +176,7 @@ nlcv <- function(eset,
         limma = {
           limmaTopTable <- limmaTwoGroups(eset[, trainingSampleRun],
                                       group = classVar)
-          limmaTopTableGeneIDs <- limmaTopTable[,geneID]                                   
+          limmaTopTableGeneIDs <- as.character(limmaTopTable[, geneID])                                   
           orderedEset <- eset[limmaTopTableGeneIDs, ] # features sorted by increasing P-values
           featLimma <- limmaTopTable$P.Value
           names(featLimma) <- limmaTopTableGeneIDs
