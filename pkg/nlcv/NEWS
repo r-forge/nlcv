@@ -1,3 +1,5 @@
+0.1-93
+    o fix layout in scoresPlot
 0.1-92
     o add randomForest explicitly to dependencies
     o fix bug in nlcv with limma feature selection, where incidentally 

@@ -38,9 +38,13 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
   classVar <- classVar[order(classVar)] # order the labels as well
   
   if (plot){
+    def.par <- par(no.readonly = TRUE)
     if (!barPlot) {
       ### layout
-      if (layout) layout(matrix(1:2, ncol = 1), heights = c(6, 1))
+      if (layout) {
+        
+        layout(matrix(1:2, ncol = 1), heights = c(6, 1))
+      }
       
       ### upper plot
       plot(x = seq(along = plotData), # indices (names) of the samples 
@@ -79,7 +83,7 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
       abline(v = sampleLocations, lty = 2, col = "grey")
       
       ### lower plot (with legends)
-      op <- par(mar = c(0,4,0,2))
+      par(mar = c(0,4,0,2))
       plot(c(0, 1), type = "n", ann = FALSE, axes = FALSE)
       legend("left", legend = classVarLevels, fill = classColors,
           bty = "n")
@@ -87,13 +91,13 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
               "   0 <= score <  0.5"), 
           pch = c(19, 17), pt.cex = 1.5, col = c("darkblue", "orange"), 
           bty = "n")
-      par(op)
       
     } else {
       barplot(height = plotData, col = ifelse(plotData >= 0.5, "green", "red"),  
           las = 3, ...)
       abline(h = 0.5, col = "grey")    
     }
+    par(def.par)
   }
   
   invisible(plotData) # named vector of proportion correctly classified
