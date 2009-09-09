@@ -1,3 +1,5 @@
+0.1-94
+    o fix layout in mcrPlot
 0.1-93
     o fix layout in scoresPlot
 0.1-92
@@ -5,7 +7,6 @@
     o fix bug in nlcv with limma feature selection, where incidentally 
       the geneID column could be a factor and therefore cause erroneous
       extraction from an ExpressionSet
-       
 0.1-91
     o rename topFeatures into topTable and turn the topFeatures function
       into a method (for 'nlcv' objects)
@@ -157,4 +158,3 @@
 0.1-45
 	removed warnings from generateData (by making a
 	real ExpressionSet)
-
