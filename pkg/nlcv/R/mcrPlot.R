@@ -29,6 +29,7 @@ mcrPlot <- function(nlcvObj, # object of class 'nlcv' such as produced by the nl
   optimFeatures <- nFeatures[apply(meanMatrix, 2, which.min)] # which min takes first, features ordered
   
   if (plot){
+    def.par <- par(no.readonly = TRUE)
     ### layout of the plot
     if (optimalDots){
       if (layout) layout(matrix(1:2, ncol=1), heights=c(6, 1))
@@ -116,6 +117,7 @@ mcrPlot <- function(nlcvObj, # object of class 'nlcv' such as produced by the nl
   class(res) <- "mcrPlot"
   attr(res, "nFeatures") <- nFeatures # for summary method
   invisible(res)
+  par(def.par)
 }
 
 summary.mcrPlot <- function(object, ...){
