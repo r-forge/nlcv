@@ -109,6 +109,7 @@ mcrPlot <- function(nlcvObj, # object of class 'nlcv' such as produced by the nl
               pch = dotpch)
         }    
       }
+      if (layout) layout(1)
       par(op)
     }
   }
