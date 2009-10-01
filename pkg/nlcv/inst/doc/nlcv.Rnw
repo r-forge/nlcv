@@ -223,6 +223,7 @@ pdf(file = "./graphs/mcrPlot_nlcv_R.pdf", width = 10, height = 5)
   layout(matrix(1:4, ncol = 2), height = c(6, 1, 6, 1))
   mcrPlot_RF_R <- mcrPlot(nlcvRF_R, plot = TRUE, optimalDots = TRUE, layout = FALSE, main = 'RF selection')
   mcrPlot_TT_R <- mcrPlot(nlcvTT_R, plot = TRUE, optimalDots = TRUE, layout = FALSE, main = 'T selection')
+  layout(1)
 dev.off()
 @
 
