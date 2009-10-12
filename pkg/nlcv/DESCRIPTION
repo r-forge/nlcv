@@ -6,6 +6,6 @@ Date: 2009-10-01
 Author: Willem Talloen, Tobias Verbeke                                                                                                             
 Maintainer: Tobias Verbeke <tobias.verbeke@openanalytics.be>
 Description: Nested loop cross validation for classification purposes    
-Depends: methods, Biobase, MLInterfaces (>= 1.22.0), multtest, graphics, RColorBrewer, xtable, sma, ipred, pamr, limma, randomForest, ROCR
+Depends: methods, Biobase, MLInterfaces (>= 1.22.0), multtest, graphics, RColorBrewer, xtable, ipred, pamr, limma, randomForest, ROCR
 License: GPL-3
 
