@@ -1,3 +1,5 @@
+0.1-96
+    o add y axis label to scores plot and improve main title
 0.1-95
     o further fix of layout in mcrPlot
 0.1-94
@@ -12,11 +14,11 @@
 0.1-91
     o rename topFeatures into topTable and turn the topFeatures function
       into a method (for 'nlcv' objects)
-    o make use of salmples names as x-axis labels of scoresPlot
+    o make use of sample names as x-axis labels of scoresPlot
 0.1-90
 	o document nldaI
 0.1-89
-	o confusionMatrix name space fixs
+	o confusionMatrix name space fix
 0.1-88
     o replace MLearn interface for randomForest feature selection by
       plain use of the randomForest function 

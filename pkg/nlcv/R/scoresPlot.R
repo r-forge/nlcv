@@ -56,6 +56,9 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
           labels = names(plotData), cex = 0.6)
       axis(2, las = 2)
       
+      # ylab
+      mtext("proportion", side = 2, line = 3)
+      
       # draw grid first...
       abline(h = 0.5, col = "grey")
       abline(v = seq(length(plotData)), lty = "dashed", col = "grey")
@@ -66,7 +69,7 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
           col = ifelse(plotData >= 0.5, "darkblue", "orange"))
       
       title(main = if(is.null(main)){ 
-                paste("Scores Plot (", tech, ", ", nfeat, " features)", sep = "")
+                paste("Freq. of being correctly classified (", tech, ", ", nfeat, " feat.)", sep = "")
               } else {
                 main
               })
