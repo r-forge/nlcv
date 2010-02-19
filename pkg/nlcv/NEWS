@@ -1,3 +1,6 @@
+0.1-97
+    o small fixes related to removal of nlcv as a4 dependency, a.o. introduction
+      of dependency on a4Core
 0.1-96
     o add y axis label to scores plot and improve main title
 0.1-95

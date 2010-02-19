@@ -1,7 +1,3 @@
-confusionMatrix <- function(x, ...){
-  UseMethod("confusionMatrix")
-}
-
 confusionMatrix.nlcv <- function(x, tech, proportions = TRUE, ...){
   mcrObj <- mcrPlot(x, plot = FALSE)
   mcrSummary <- summary(mcrObj)

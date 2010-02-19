@@ -1,7 +1,3 @@
-setGeneric("topTable", function(fit, n, ...){
-      standardGeneric("topTable")
-})    
-
 setOldClass("nlcv")
 
 #' function to extract the top n features

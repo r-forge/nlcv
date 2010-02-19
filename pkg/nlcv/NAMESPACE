@@ -1,6 +1,6 @@
 import(xtable)
-export(classify, nlcv, scoresPlot, mcrPlot, confusionMatrix, 
-       simulateData, rankDistributionPlot, limmaTwoGroups, pamrTrain, pamrML, pamrI,
+export(classify, nlcv, scoresPlot, mcrPlot, 
+       simulateData, rankDistributionPlot, pamrTrain, pamrML, pamrI,
        rocPlot, nldaI)
 exportMethods("topTable")       
 S3method(summary, mcrPlot)
