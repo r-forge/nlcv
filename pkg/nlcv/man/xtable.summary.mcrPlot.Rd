@@ -23,7 +23,7 @@
   the optimal number of features, the mean MCR and the standard deviation
   on the MCR for each of the classification methods used.
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \seealso{\code{\link{summary.mcrPlot}}, \code{\link{mcrPlot}}, \code{\link[xtable]{xtable}}}
 \examples{
   data(nlcvRF_SS)

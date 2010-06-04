@@ -39,7 +39,7 @@ nlcv
   of a feature in the top n across all runs; 
   the features are sorted on decreasing frequency.
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \examples{
   data(nlcvRF_SS)
   topTable(nlcvRF_SS, n = 7, method = "medianrank")

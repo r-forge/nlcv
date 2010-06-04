@@ -65,7 +65,7 @@ nlcv(eset, classVar = "type", nRuns = 2, propTraining = 2/3, classdist = c("bala
   P-values are used; for random forest based feature selection the
   variable importance measure is given.
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \note{ 
   The variable importance measure used is the third column of the
   output returned by the \code{randomForest} function.

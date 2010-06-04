@@ -40,5 +40,5 @@ scoresPlot(nlcvObj, tech, nfeat, plot = TRUE, barPlot = FALSE, layout = TRUE, ma
   of features used).
   
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \keyword{manip}

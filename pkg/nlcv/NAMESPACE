@@ -1,8 +1,13 @@
 import(xtable)
+importFrom("a4Core", "confusionMatrix")
+importFrom("a4Core", "simulateData")
+importFrom("a4Core", "topTable")
+
 export(classify, nlcv, scoresPlot, mcrPlot, 
-       simulateData, rankDistributionPlot, pamrTrain, pamrML, pamrI,
+       rankDistributionPlot, pamrTrain, pamrML, pamrI,
        rocPlot, nldaI)
 exportMethods("topTable")       
+
 S3method(summary, mcrPlot)
 S3method(print, summary.mcrPlot)
 S3method(xtable, summary.mcrPlot)

@@ -37,7 +37,7 @@ classify(eset, trainingSample, testSample, classVar = "type")
   \item{pam.predic}{predicted values by the pam algorithm}
 }
 
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \note{
   The different classification algorithms are called via the uniform interfaces
   of the \code{MLInterfaces} package.

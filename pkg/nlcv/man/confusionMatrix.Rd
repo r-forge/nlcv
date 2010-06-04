@@ -1,5 +1,4 @@
 \name{confusionMatrix}
-\alias{confusionMatrix}
 \alias{print.nlcvConfusionMatrix}
 \alias{confusionMatrix.nlcv}
 \title{compute a confusion matrix for the optimal number of features
@@ -12,7 +11,6 @@
    all runs of the nested loop.
 }
 \usage{
-confusionMatrix(x, ...)
 \method{confusionMatrix}{nlcv}(x, tech, proportions = TRUE, ...)
 \method{print}{nlcvConfusionMatrix}(x, ...)
 }
@@ -32,5 +30,5 @@ confusionMatrix(x, ...)
   which directly inherits from the \code{ftable} class (representing the 
   confusion matrix)
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \keyword{manip}

@@ -1,3 +1,5 @@
+0.1-99
+    o small documentation and namespace fixes
 0.1-98
     o fix ordering by geneID in nlcv with limma feature selection
 0.1-97

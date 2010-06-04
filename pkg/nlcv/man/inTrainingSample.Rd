@@ -32,5 +32,5 @@ inTrainingSample(y, propTraining = 2/3, classdist = c("balanced", "unbalanced"))
   table(y[nlcv:::inTrainingSample(y, 2/3, "unbalanced")])  # should be 14, 14 (for A, B resp.)
   table(y[!nlcv:::inTrainingSample(y, 2/3, "unbalanced")]) # should be 7, 66  (for A, B resp.) 
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \keyword{manip} % TODO change keyword

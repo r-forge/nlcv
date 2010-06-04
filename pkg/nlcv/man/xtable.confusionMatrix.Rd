@@ -21,6 +21,6 @@
 \value{
   LaTeX table representing the confusion matrix
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \seealso{\code{\link{confusionMatrix}}, \code{\link[xtable]{xtable}}}
 \keyword{manip}

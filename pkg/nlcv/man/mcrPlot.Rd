@@ -54,6 +54,6 @@ mcrPlot(nlcvObj, plot = TRUE, optimalDots = TRUE, rescale = FALSE, layout = TRUE
    associated mean MCR and standard deviation of the MCR values.
 
 }
-\author{W. Talloen and T. Verbeke}
+\author{Willem Talloen and Tobias Verbeke}
 \seealso{\code{\link{nlcv}}}
 \keyword{manip}
