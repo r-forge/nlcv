@@ -176,9 +176,12 @@ nlcv <- function(eset,
         limma = {
           limmaTopTable <- limmaTwoGroups(eset[, trainingSampleRun],
                                       group = classVar)
-          limmaTopTableGeneIDs <- as.character(limmaTopTable[, geneID])
-          if (geneID == "ENTREZID")
-            limmaTopTableGeneIDs <- paste(limmaTopTableGeneIDs, "_at", sep = "")
+          limmaTopTableGeneIDs <- as.character(limmaTopTable[, "ROWNAMES"])
+#          if (geneID == "ENTREZID"){
+#            # limmaTopTableGeneIDs <- limmaTopTableGeneIDs[!is.na(limmaTopTableGeneIDs)]
+#            limmaTopTableGeneIDs <- paste(limmaTopTableGeneIDs, "_at", sep = "")
+#          }
+          
           orderedEset <- eset[limmaTopTableGeneIDs, ] # features sorted by increasing P-values
           featLimma <- limmaTopTable$P.Value
           names(featLimma) <- limmaTopTableGeneIDs

@@ -11,6 +11,7 @@ limmaTwoGroups <- function(object, group){
   design <- model.matrix(~ f)
   fit <- lmFit(object, design)
   fit <- eBayes(fit)
+  fit$genes <- cbind(ROWNAMES = rownames(fit$genes), fit$genes)
   sortedResults <- limma:::topTable(fit, coef = 2, number = dim(object)["Features"])
   # coef = 2 because we are not interested whether the intercept is significant 
   # but whether group 2 is significantly different from group 1
