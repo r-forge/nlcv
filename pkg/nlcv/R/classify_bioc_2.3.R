@@ -152,7 +152,7 @@ classify_bioc_2.3 <- function(eset, trainingSample, testSample, classVar = "type
 
   
   ## Output
-  res <- vector(mode = "list", length = 2 * length(classifMethodList))
+  res <- vector(mode = "list")
   if (classifMethodList$dlda){
     res$dlda <- dlda.error
     res$dlda.predic <- dlda.predic
