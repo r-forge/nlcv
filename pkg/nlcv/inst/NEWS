@@ -1,3 +1,6 @@
+0.2-2
+    o fix startup message
+    o better data compression
 0.2-1
     o fix storing of results in classify_bioc_2.3
 0.2-0

@@ -18,7 +18,7 @@ scoresPlot <- function(nlcvObj,   # output object from nlcv
     stop("Invalid classification technique in 'tech' argument")
   }
   ### compare predicted with observed class labels (for all runs)
-  resout <- compareOrig(nlcvObj = nlcvObj, tech = tech)
+  resout <- compareOrig(nlcvObj = nlcvObj, techn = tech)
   
   ### compute proportions of correct classification over all runs    
   resoutProp <- lapply(resout, colMeans, na.rm = TRUE)              
